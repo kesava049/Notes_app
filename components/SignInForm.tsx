@@ -23,10 +23,13 @@ export const SignInForm = () => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-6">
-      <div className="w-full max-w-md rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 shadow-2xl p-6">
+    <div className="min-h-screen flex items-center justify-center bg-white p-6">
+      <div className="w-full max-w-md rounded-2xl bg-black border border-white/10 shadow-2xl p-6">
         {/* Header */}
         <div className="text-center space-y-1 mb-6">
+          <h1 className="absolute top-4 left-4 text-3xl font-extrabold text-transparent bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text">
+          HD
+        </h1>
           <h2 className="text-xl font-semibold text-white">Sign in</h2>
           <p className="text-sm text-gray-400">
             Please login to continue to your account.
@@ -37,31 +40,31 @@ export const SignInForm = () => {
         <div className="space-y-4">
           {/* Email */}
           <div className="space-y-1">
-            <label htmlFor="email" className="text-sm text-gray-300">Email</label>
+            <label htmlFor="email" className="text-sm text-white">Email</label>
             <input
               id="email"
               type="email"
               value={formData.email}
               onChange={(e) => handleInputChange("email", e.target.value)}
               placeholder="Enter your email"
-              className="w-full px-4 py-2 rounded-md bg-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+              className="w-full px-4 py-2 rounded-md bg-black border border-white text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white transition"
             />
           </div>
 
           {/* OTP */}
           <div className="space-y-1">
-            <label htmlFor="otp" className="text-sm text-gray-300">OTP</label>
+            <label htmlFor="otp" className="text-sm text-white">OTP</label>
             <input
               id="otp"
               type="text"
               value={formData.otp}
               onChange={(e) => handleInputChange("otp", e.target.value)}
               placeholder="Enter OTP"
-              className="w-full px-4 py-2 rounded-md bg-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+              className="w-full px-4 py-2 rounded-md bg-black border border-white text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white transition"
             />
             <button
               onClick={handleResendOTP}
-              className="text-sm text-blue-400 hover:underline mt-1"
+              className="text-sm text-white hover:underline mt-1"
             >
               Resend OTP
             </button>
@@ -74,9 +77,9 @@ export const SignInForm = () => {
               id="keepLoggedIn"
               checked={formData.keepLoggedIn}
               onChange={(e) => handleInputChange("keepLoggedIn", e.target.checked)}
-              className="h-4 w-4 text-blue-500 rounded focus:ring-2 focus:ring-blue-400"
+              className="h-4 w-4 text-white bg-black border border-white focus:ring-white"
             />
-            <label htmlFor="keepLoggedIn" className="text-sm text-gray-300">
+            <label htmlFor="keepLoggedIn" className="text-sm text-white">
               Keep me logged in
             </label>
           </div>
@@ -84,7 +87,7 @@ export const SignInForm = () => {
           {/* Sign In Button */}
           <button
             onClick={handleSignIn}
-            className="w-full mt-4 px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-medium rounded-lg shadow-lg hover:opacity-90 transition"
+            className="w-full mt-4 px-4 py-2 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition"
           >
             Sign in
           </button>
@@ -94,10 +97,7 @@ export const SignInForm = () => {
         <div className="mt-6 text-center">
           <p className="text-sm text-gray-400">
             Need an account?{" "}
-            <button onClick={()=>{
-              router.push('/signup')
-            }}
-            className="text-blue-400 hover:underline font-medium">
+            <button onClick={() => router.push('/signup')} className="text-white hover:underline font-medium">
               Create one
             </button>
           </p>
