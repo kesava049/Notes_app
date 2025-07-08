@@ -1,8 +1,8 @@
 
-import { SignInForm } from "@/components/SignInForm";
+import  SignIn  from "@/components/SigninForm";
 
 export default function(){
     return<div>
-        <SignInForm />
+        <SignIn />
     </div>
 }

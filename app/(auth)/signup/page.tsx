@@ -1,8 +1,8 @@
 
-import { SignUpForm } from "@/components/SignUpForm";
+import SignUp from "@/components/SignUpForm";
 
 export default function(){
     return<div>
-        <SignUpForm />
+        <SignUp />
     </div>
 }
